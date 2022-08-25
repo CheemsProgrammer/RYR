@@ -13,7 +13,7 @@
 11 - git branch: lista las ramas que tenemos en GIT
 12 - git branch -D: elimina una rama en GIT
 13 - git commit -m "mensaje de la version": crea una commit con un mensaje
-14 - 
+14 - git log: muestra la lista de commit del repositorio
 
 # Estados de archivos en GIT
 
