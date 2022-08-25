@@ -1,0 +1,22 @@
+# Aquí copiaremos los comandos de GIT
+
+1  - git init: inicializa un nuevo repositorio de GIT
+2  - git status: muestra el estado del proyecto
+3  - git add nombre_archivo: agrega un archivo a staging
+4  - git rm --cached nombre_archivo: remueve un archivo de staging
+5  - git remote -v: muestra la información de los accesos remotos
+6  - git remote add nombre_acceso url_acceso: agrega un nuevo acceso remoto
+7  - git remote rm nombre_acceso: elimina un acceso remoto
+8  - git config --global user.name "nombre_usuario": agrega nuestro nombre de usuario de GitHub
+9  - git config --global user.email "correo_usuario": agrega nuestro correo de GitHub
+10 - git config --list: muestra la configuración de GIT
+11 - git branch: lista las ramas que tenemos en GIT
+12 - git branch -D: elimina una rama en GIT
+13 - git commit -m "mensaje de la version": crea una commit con un mensaje
+14 - 
+
+# Estados de archivos en GIT
+
+1 - U: Untracked
+2 - A: Added
+3 - M: Modified
