@@ -1,7 +1,16 @@
 * Stash
+
 1 - git stash: Devuelve al estado anterior de la commit pero guarda los nuevos cambios en un lugar temporal
 2 - git stash list: Muestra todos los cambios temporales con la etiqueta WIP (Work in Progress)
 3 - git stash pop: Abrir los cambios que eran temporales dentro de la commit de la rama actual y elimina el Stash
 4 - git stash branch nombre_rama: Guarda los cambios temporales en una nueva rama
 5 - git stash drop: elimina los stash que tenemos en la lista
 
+* Alias
+6 - alias nombre_alias = "comando": nos permite crear un alias para guardar comandos y luego ejecutarlos (ojo: solo para comandos difíciles, perezosos)
+7 - git log --all --graph --decorate --oneline: Muestra de forma visual la historia de nuestro repositorio
+
+* Tags
+- git tag -a version -m "mensaje" hash_commit: Nos permite definir tags para identificar las versiones de nuestro proyecto
+- git tag: Muestra todas las tags creadas hasta el momento
+- git show-ref --tags: Nos muestra a que commit está ligada una tag
