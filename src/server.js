@@ -1,7 +1,11 @@
+//variables de entorno
 require('dotenv').config()
+
+//base de datos
 require('./controllers/connect')()
 const connection = conn()
 
+//constantes
 const express = require('express')
 const app     = express()
 const port    = process.env.PORT
@@ -13,18 +17,14 @@ const path    = require('path')
 //const fetch   = require('node-fetch')
 //const jwt     = require('jsonwebtoken')*/
 
-
-/*app.set('views', path.join(__dirname, '../views'))
-app.engine('ejs', ejs.__express)
-app.set('view engine', 'ejs')
-app.use(express.static(__dirname+'../views'))*/
-
 app.use(parser.urlencoded({extended: true}))
 app.set('views', path.join(__dirname, '../views'))
 app.engine('ejs', ejs.__express)
 app.set('view engine','ejs')
 app.use('/views', express.static(path.join(__dirname, "../views")));
 
+
+//ponemos a correr el servidor
 app.listen(port, function() {
   
   connection.connect(function () {
@@ -35,6 +35,7 @@ app.listen(port, function() {
 
 })
 
+//zonas para los renderizados de archivos ejs
 app.get(process.env.ROOT_PATH, function(req,res) {
 
   res.render("inicio")

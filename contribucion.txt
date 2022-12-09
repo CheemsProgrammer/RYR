@@ -1,3 +1,0 @@
-# Quién y cómo puede alguien contribuir a un repositorio
-
-1 - git pull url rama : Se trae la historia actualizada del repositorio
