@@ -9,27 +9,39 @@ const url     = process.env.URL
 const parser  = require('body-parser')
 const ejs     = require('ejs')
 const path    = require('path')
-const bcrypt  = require('bcrypt')
-const fetch   = require('node-fetch')
-const jwt     = require('jsonwebtoken')
+//const bcrypt  = require('bcrypt')
+//const fetch   = require('node-fetch')
+//const jwt     = require('jsonwebtoken')*/
+
+
+/*app.set('views', path.join(__dirname, '../views'))
+app.engine('ejs', ejs.__express)
+app.set('view engine', 'ejs')
+app.use(express.static(__dirname+'../views'))*/
 
 app.use(parser.urlencoded({extended: true}))
 app.set('views', path.join(__dirname, '../views'))
 app.engine('ejs', ejs.__express)
-app.set('view engine', 'ejs')
-app.use(express.static(__dirname+'../views'))
+app.set('view engine','ejs')
+app.use('/views', express.static(path.join(__dirname, "../views")));
 
 app.listen(port, function() {
+  
   connection.connect(function () {
+
     console.log(`Server running on ${url+port}`)
+
   })
+
 })
 
 app.get(process.env.ROOT_PATH, function(req,res) {
-  res.render("register")
+
+  res.render("inicio")
+
 })
 
-app.get(process.env.LOGIN_PATH, function(req,res) {
+/*app.get(process.env.LOGIN_PATH, function(req,res) {
   res.render("login")
 })
 
@@ -193,4 +205,4 @@ app.get('/jwt/verify/:key/:token', (req,res) => {
       res.send('Hola Usuario')
     }
   })
-})
+})*/
