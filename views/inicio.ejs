@@ -11,7 +11,7 @@
     <!--Nombre de la pagina-->
     <title>Document</title>
 </head>
-<body>
+<body id="dark">
     
     <!--Barra para registrar, iniciar seción o buscar-->
     <nav class="barra-nav">
@@ -30,7 +30,7 @@
 
                     <li>
 
-                        <box-icon type='solid' name='cake' color="#fff"></box-icon>
+                        <box-icon type='solid' name='cake' color="#fff" id="box-icon"></box-icon>
 
                     </li>
         
@@ -58,6 +58,13 @@
 
                     </li>
 
+                    <li>
+
+                        <box-icon name='toggle-left' color="#fff" class="off" id="encendido"></box-icon>
+                        <box-icon name='toggle-right' color="#fff" class="on" id="apagado"></box-icon>
+
+                    </li>
+
                 </ul>
 
             </section>
@@ -76,7 +83,7 @@
         </section>
 
         <!--ésta es la parte de usuario(o parte 2)-->
-        <section class="registro-inicio">
+        <section class="registro-inicio" id="registro-inicio-id">
 
             <section class="singup">
 

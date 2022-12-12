@@ -17,6 +17,12 @@ body{
 
 }
 
+box-icon{
+
+    color: aqua;
+
+}
+
 /*barra :)*/
 .barra-nav {
 
@@ -81,19 +87,6 @@ body{
 
 }
 
-.baropen{
-
-    transition: 1s;
-    background: #212529;
-    position: absolute;
-    width: 20%;
-    height: 100vh;
-    display: block;
-    animation-name: bar;
-    animation-duration: 1s;
-
-}
-
 /*estructura de la barra*/
 
 .header-bar{
@@ -140,6 +133,18 @@ body{
 
 }
 
+.on{
+
+    display: none;
+
+}
+
+.darkbox{
+
+    display: none;
+
+}
+
 /*config para los botones de inicio y regi*/
 
 .registro-inicio{
@@ -166,6 +171,27 @@ body{
 .registro-inicio input:hover{
 
     cursor: pointer;
+
+}
+
+.registro-inicio-dark{
+
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.registro-inicio-dark input{
+
+    width: 10em;
+    height: 3em;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    background: none;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 1em 2em 1em 1em;
 
 }
 
