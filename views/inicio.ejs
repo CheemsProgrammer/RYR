@@ -4,19 +4,109 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Estilos-->
     <link rel="stylesheet" href="/views/css/inicion.css">
+
+    <!--Nombre de la pagina-->
     <title>Document</title>
 </head>
 <body>
     
-    <h1>hola</h1>
+    <!--Barra para registrar, iniciar seción o buscar-->
+    <nav class="barra-nav">
 
-    <button id="button">hola</button>
+        <section class="barclose" id="barItem">
+
+            <nav class="header-bar">
+
+                <box-icon name='chevron-left' type='solid' color="#fff" id="buttonclose"></box-icon>
+
+            </nav>
+
+            <section class="listitem">
+
+                <ul>
+
+                    <li>
+
+                        <box-icon type='solid' name='cake' color="#fff"></box-icon>
+
+                    </li>
+        
+                    <li>
+        
+                        <box-icon name='cog' type='solid' color="#fff"></box-icon>
+        
+                    </li>
+        
+                    <li>
+        
+                        <box-icon name='help-circle' type='solid' color="#fff"></box-icon>
+        
+                    </li>
+
+                    <li>
+        
+                        <box-icon type='solid' name='credit-card' color="#fff"></box-icon>
+        
+                    </li>
+
+                    <li>
+
+                        <box-icon name='line-chart' color="#fff"></box-icon>
+
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </section>
+
+        <!--ésta es la parte de navegacion(o primera parte)-->
+        <section class="navegacion-menu">
+
+            <section>
+
+                <box-icon type='solid' name='chevron-right' class="buttonopen" id="buttonbar"></box-icon>
+
+            </section>
+
+        </section>
+
+        <!--ésta es la parte de usuario(o parte 2)-->
+        <section class="registro-inicio">
+
+            <section class="singup">
+
+                <input type="submit" value="Registrarse">
+
+            </section>
+
+            <section class="singin">
+
+                <input type="submit" value="iniciar sección">
+
+            </section>
+
+        </section>
+
+    </nav>
+
+    <!--Ésta será la sección donde se organizarán todos los contenidos ya creados-->
+    <section>
+
+
+
+    </section>
 
 </body>
 
-    <script src="/views/js/inicio-alert.js"></script>
+    <!--scripts que utilizamos como estilos aparte pàra estilizar la pagina con mayor facilidad-->
+    <script src="/views/js/inicio.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/views/js/sweetalert.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </html>
