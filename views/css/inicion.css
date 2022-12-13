@@ -13,7 +13,71 @@
 
 body{
 
+    width: 100%;
     height: 100vh;
+
+}
+
+.bubles span:nth-child(even){
+
+    background: #6c63ff;
+
+}
+
+.content{
+
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.presentacion-dark input{
+
+    width: 10em;
+    height: 3em;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    background: none;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 1em 2em 1em 1em;
+    z-index: 1000;
+
+}
+
+.presentacion-dark input:hover{
+
+    transition: .5s;
+    border-color: #6c63ff;
+    color: #6c63ff;
+    cursor: pointer;
+    z-index: 1000;
+
+}
+
+.presentacion input{
+
+    width: 10em;
+    height: 3em;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    background: none;
+    border: 2px solid rgb(0, 0, 0);
+    margin: 1em 2em 1em 1em;
+    z-index: 1;
+
+}
+
+.presentacion input:hover{
+
+    transition: .5s;
+    border-color: #6c63ff;
+    color: #6c63ff;
+    cursor: pointer;
+    z-index: 1;
 
 }
 
@@ -22,6 +86,14 @@ body{
 body ion-icon{
 
     color: white;
+    font-size: 20px;
+
+}
+
+body ion-icon:hover{
+
+    transition: .4s;
+    color: #6c63ff;
 
 }
 
@@ -30,14 +102,27 @@ body .buttonopen{
     color: #212529;
 
 }
-
 .icons ion-icon{
 
     color: #212529;
 
 }
 
+.icons ion-icon:hover{
+
+    transition: .4s;
+    color: #6c63ff;
+    cursor: pointer;
+
+}
+
 .icons .buttonopen{
+
+    color: white;
+
+}
+
+.icons{
 
     color: white;
 
@@ -65,7 +150,7 @@ body .buttonopen{
 
 .barra-nav .navegacion-menu ion-icon{
 
-    margin: 1em;
+    margin: 1.5em;
 
 }
 
@@ -100,7 +185,7 @@ body .buttonopen{
     transition: 1s;
     background: #212529;
     position: absolute;
-    width: 5%;
+    width: 6%;
     height: 100vh;
     animation-name: bar;
     animation-duration: 1s;
@@ -133,7 +218,7 @@ body .buttonopen{
 
 .listitem{
 
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     margin: 1em;
@@ -144,7 +229,6 @@ body .buttonopen{
 
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: repeat(3,1fr);
 
 }
 
@@ -198,6 +282,9 @@ body .buttonopen{
 
 .registro-inicio input:hover{
 
+    transition: .5s;
+    border-color: #6c63ff;
+    color: #6c63ff;
     cursor: pointer;
 
 }
@@ -223,6 +310,45 @@ body .buttonopen{
 
 }
 
+.registro-inicio-dark input:hover{
+
+    transition: .5s;
+    border-color: #6c63ff;
+    color: #6c63ff;
+    cursor: pointer;
+
+}
+
+.container{
+
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.bubles{
+
+    position: absolute;
+    display: flex;
+
+}
+
+.bubles span {
+
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #212529;
+    opacity: .15;
+    margin: 0 4px;
+    border-radius: 50%;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+
+}
+
 @keyframes bar {
     
     0%{
@@ -236,4 +362,30 @@ body .buttonopen{
         left: 0px;
 
     }
+}
+
+@keyframes animate {
+
+    0%{
+
+        transform: translateY(100vh) scale(0);
+
+    }
+
+    100%{
+
+        transform: translateY(- 10vh) scale(1);
+
+    }
+
+}
+
+@media (max-width: 900px) {
+    
+    .baropenicon{
+
+        width: 12%;
+
+    }
+
 }

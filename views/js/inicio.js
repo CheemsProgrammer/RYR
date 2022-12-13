@@ -1,3 +1,40 @@
+//swal
+
+Swal.fire({
+  imageUrl            : '../views/image/cheems-cocinero.png',
+  imageWidth          : 170,
+  imageHeight         : 200,
+  title               : 'Bienvenido/a repostero/a',
+})
+
+let infoInit                    = document.getElementById('infoInit')
+
+function infoComienzo() {
+
+  Swal.fire({
+
+    title               : 'Bienvenido/a repostero/a',
+
+  })
+
+}
+
+infoInit.addEventListener('click', infoComienzo)
+
+let informacion                 = document.getElementById('ayuda')
+
+function helpText() {
+
+  Swal.fire({
+
+    title               : 'Bienvenido/a repostero/a',
+
+  })
+
+}
+
+informacion.addEventListener('click', helpText)
+
 //esto abre la barra de iconos
 
 const buttonbar                 = document.getElementById('buttonbar')
@@ -29,9 +66,11 @@ let encendido                   = document.getElementById('encendido')
 let apagado                     = document.getElementById('apagado')
 let background                  = document.getElementById('dark')
 let singinup                    = document.getElementById('registro-inicio-id')
+let container                   = document.getElementById('container')
 
 function darkmode() {
 
+  container.className           = 'presentacion-dark'
   singinup.className            = 'registro-inicio-dark'
   bar.style.background          = '#fff'
   background.style.background   = '#212529'
@@ -47,6 +86,7 @@ encendido.addEventListener('click',darkmode)
 
 function lightmode() {
 
+  container.className           = 'presentacion'
   singinup.className            = 'registro-inicio'
   bar.style.background          = '#212529'
   background.style.background   = '#fff'
