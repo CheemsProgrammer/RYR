@@ -18,11 +18,7 @@ body{
 
 }
 
-.bubles span:nth-child(even){
-
-    background: #6c63ff;
-
-}
+/*esto es para el boton de comienzo*/
 
 .content{
 
@@ -251,12 +247,6 @@ body .buttonopen{
 
 }
 
-.darkbox{
-
-    display: none;
-
-}
-
 /*config para los botones de inicio y regi*/
 
 .registro-inicio{
@@ -316,6 +306,13 @@ body .buttonopen{
     border-color: #6c63ff;
     color: #6c63ff;
     cursor: pointer;
+
+}
+
+/*esto lo utilizamos para la animacion del fondo*/
+.bubles span:nth-child(even){
+
+    background: #6c63ff;
 
 }
 
