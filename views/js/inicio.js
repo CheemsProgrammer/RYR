@@ -23,6 +23,8 @@ function actionBarclose(){
 
 buttonclose.addEventListener('click', actionBarclose)
 
+//funcion para el modo oscuro
+
 let encendido                   = document.getElementById('encendido')
 let apagado                     = document.getElementById('apagado')
 let background                  = document.getElementById('dark')
@@ -33,6 +35,7 @@ function darkmode() {
   singinup.className            = 'registro-inicio-dark'
   bar.style.background          = '#fff'
   background.style.background   = '#212529'
+  background.className          = 'icons'
   apagado.style.display         = 'block'
   encendido.style.display       = 'none'
 
@@ -40,11 +43,14 @@ function darkmode() {
 
 encendido.addEventListener('click',darkmode)
 
+//funcion para el modo claro 
+
 function lightmode() {
 
   singinup.className            = 'registro-inicio'
   bar.style.background          = '#212529'
   background.style.background   = '#fff'
+  background.className          = 'dark'
   apagado.style.display         = 'none'
   encendido.style.display       = 'block'
 

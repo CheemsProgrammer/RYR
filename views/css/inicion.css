@@ -17,9 +17,29 @@ body{
 
 }
 
-box-icon{
+/*esto configura el color de los iconos*/
 
-    color: aqua;
+body ion-icon{
+
+    color: white;
+
+}
+
+body .buttonopen{
+
+    color: #212529;
+
+}
+
+.icons ion-icon{
+
+    color: #212529;
+
+}
+
+.icons .buttonopen{
+
+    color: white;
 
 }
 
@@ -43,13 +63,13 @@ box-icon{
 
 }
 
-.barra-nav .navegacion-menu box-icon{
+.barra-nav .navegacion-menu ion-icon{
 
     margin: 1em;
 
 }
 
-.navegacion-menu box-icon:hover{
+.navegacion-menu ion-icon:hover{
 
     cursor: pointer;
 
@@ -64,10 +84,11 @@ box-icon{
     height: 100vh;
     animation-name: barclose;
     animation-duration: 1s;
+    z-index: 1;
 
 }
 
-.barclose box-icon{
+.barclose ion-icon{
 
     transition: 1s;
     transform: translateX(-50px);
@@ -79,11 +100,18 @@ box-icon{
     transition: 1s;
     background: #212529;
     position: absolute;
-    width: 8%;
+    width: 5%;
     height: 100vh;
-    display: block;
     animation-name: bar;
     animation-duration: 1s;
+    z-index: 1;
+
+}
+
+.dsplazButton{
+
+    animation-name: deplaz-button;
+    animation-duration: 5s;
 
 }
 
@@ -97,7 +125,7 @@ box-icon{
 
 }
 
-.header-bar box-icon{
+.header-bar ion-icon{
 
     margin: 1em;
 
@@ -126,7 +154,7 @@ box-icon{
 
 }
 
-.listitem box-icon{
+.listitem ion-icon{
 
     cursor: pointer;
     margin-top: 1.5em;
