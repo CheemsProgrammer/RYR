@@ -18,6 +18,19 @@ body{
 
 }
 
+h1{
+
+    font-size: 25px;
+
+}
+
+.titleSweet{
+
+    font-size: 25px;
+    color: #5740ce;
+
+}
+
 /*esto es para el boton de comienzo*/
 
 .content{
@@ -47,10 +60,85 @@ body{
 .presentacion-dark input:hover{
 
     transition: .5s;
-    border-color: #6c63ff;
-    color: #6c63ff;
+    border-color: #5740ce;
+    color: #5740ce;
     cursor: pointer;
     z-index: 1000;
+
+}
+
+.presentacion-dark{
+
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(2, 1rf);
+    text-align: center;
+
+}
+
+.presentacion-dark .subtitle{
+
+    font-size: 10px;
+    color: #d6d6d6;
+
+}
+
+.presentacion-dark h1{
+
+    font-size: 50px;
+
+}
+
+.presentacion-dark span{
+
+    color: #5740ce;
+
+}
+
+.presentacion-dark div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #38393f;
+
+}
+
+.presentacion{
+
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(2, 1rf);
+    text-align: center;
+
+}
+
+.presentacion .subtitle{
+
+    font-size: 10px;
+    color: #38393f;
+
+}
+
+.presentacion h1{
+
+    font-size: 50px;
+    color: #16171b;
+
+}
+
+.presentacion span{
+
+    color: #5740ce;
+
+}
+
+.presentacion div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #38393f;
 
 }
 
@@ -59,9 +147,9 @@ body{
     width: 10em;
     height: 3em;
     border-radius: 4px;
-    color: rgb(0, 0, 0);
+    color: #16171b;
     background: none;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid #16171b;
     margin: 1em 2em 1em 1em;
     z-index: 1;
 
@@ -70,8 +158,8 @@ body{
 .presentacion input:hover{
 
     transition: .5s;
-    border-color: #6c63ff;
-    color: #6c63ff;
+    border-color: #5740ce;
+    color: #5740ce;
     cursor: pointer;
     z-index: 1;
 
@@ -89,25 +177,25 @@ body ion-icon{
 body ion-icon:hover{
 
     transition: .4s;
-    color: #6c63ff;
+    color: #5740ce;
 
 }
 
 body .buttonopen{
 
-    color: #212529;
+    color: #16171b;
 
 }
 .icons ion-icon{
 
-    color: #212529;
+    color: #16171b;
 
 }
 
 .icons ion-icon:hover{
 
     transition: .4s;
-    color: #6c63ff;
+    color: #5740ce;
     cursor: pointer;
 
 }
@@ -159,7 +247,7 @@ body .buttonopen{
 .barclose{
 
     transition: 1s;
-    background: #212529;
+    background: #16171b;
     position: absolute;
     width: 0%;
     height: 100vh;
@@ -179,7 +267,7 @@ body .buttonopen{
 .baropenicon{
 
     transition: 1s;
-    background: #212529;
+    background: #16171b;
     position: absolute;
     width: 6%;
     height: 100vh;
@@ -263,9 +351,9 @@ body .buttonopen{
     width: 10em;
     height: 3em;
     border-radius: 4px;
-    color: rgb(0, 0, 0);
+    color: #16171b;
     background: none;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid #16171b;
     margin: 1em 2em 1em 1em;
 
 }
@@ -273,8 +361,8 @@ body .buttonopen{
 .registro-inicio input:hover{
 
     transition: .5s;
-    border-color: #6c63ff;
-    color: #6c63ff;
+    border-color: #5740ce;
+    color: #5740ce;
     cursor: pointer;
 
 }
@@ -303,8 +391,8 @@ body .buttonopen{
 .registro-inicio-dark input:hover{
 
     transition: .5s;
-    border-color: #6c63ff;
-    color: #6c63ff;
+    border-color: #5740ce;
+    color: #5740ce;
     cursor: pointer;
 
 }
@@ -312,7 +400,7 @@ body .buttonopen{
 /*esto lo utilizamos para la animacion del fondo*/
 .bubles span:nth-child(even){
 
-    background: #6c63ff;
+    background: #5740ce;
 
 }
 
@@ -337,7 +425,7 @@ body .buttonopen{
     position: relative;
     width: 30px;
     height: 30px;
-    background: #212529;
+    background: #16171b;
     opacity: .15;
     margin: 0 4px;
     border-radius: 50%;
