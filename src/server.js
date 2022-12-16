@@ -35,11 +35,27 @@ app.listen(process.env.PORT, () => {
 })
 
 //zonas para los renderizados de archivos ejs
+
+//nuestro inicio
 app.get(process.env.ROOT_PATH, function(req,res) {
 
   res.render("inicio")
 
 })
+
+//registro
+
+app.get(process.env.ROOT_REG, function(req, res){
+
+  res.render('registro')
+
+})
+
+/*app.post(process.env.ROOT_REG, function(req, res){
+
+  
+
+})*/
 
 /*app.get(process.env.LOGIN_PATH, function(req,res) {
   res.render("login")

@@ -52,8 +52,8 @@ if(localStorage.getItem('cookies') == ''){
         
         Toast.fire({
     
-          icon: 'success',
-          title: 'Gracias y que las disfrutes!!'
+          icon            : 'success',
+          title           : 'Gracias y que las disfrutes!!'
     
         })
     
@@ -77,8 +77,8 @@ if(localStorage.getItem('cookies') == ''){
         
         Toast.fire({
     
-          icon: 'error',
-          title: 'Te lo pierdes >:(',
+          icon            : 'error',
+          title           : 'Te lo pierdes >:(',
     
         })
     

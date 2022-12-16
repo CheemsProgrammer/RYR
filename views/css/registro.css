@@ -1,0 +1,353 @@
+/*fuentes a usar*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/*esto para que no se valla a la que te gusta*/
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/*config del cuerpo*/
+
+body{
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*caja de registro o login*/
+
+/*esto es una configuracion para el modo claro*/
+
+.box{
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 1;
+    color: #16171b;
+
+}
+
+.box .box-header a{
+
+    color: #16171b;
+
+}
+
+.box .box-form section{
+
+    color: #16171b;
+
+}
+
+.box .box-header h1{
+
+    color: #16171b;
+
+}
+
+.box .box-form input{
+
+    color: #16171b;
+
+}
+
+.box .box-form span{
+
+    color: #16171b;
+
+}
+
+/*esto es una configuracion para el modo oscuro*/
+
+.box-dark{
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #16171b;
+    z-index: 1;
+
+}
+
+/*config de la cabecera*/
+
+.box-header{
+
+    width: 100%;
+    height: 10%;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.box-header b{
+
+    color: #5740ce;
+
+}
+
+.box-header section{
+
+    margin: 1em;
+
+}
+
+.box-header section a{
+
+    margin: 1em;
+    text-decoration: none;
+    color: white;
+
+}
+
+.box-header section a:hover{
+
+    transition: .5s;
+    color: #5740ce;
+
+}
+
+/*config del contenido*/
+
+.box-body{
+
+    width: 100%;
+    height: 82%;
+    display: inline-flex;
+
+}
+
+.box-body div{
+
+    width: 50%;
+    height: 100%;
+
+}
+
+.box-form{
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+
+.box-form section{
+
+    font-size: 30px;
+    position: absolute;
+    top: 5%;
+    color: white;
+
+}
+
+.box-form section b{
+
+    color: #5740ce;
+
+}
+
+.box-form div{
+
+    position: relative;
+
+}
+
+.box-form input{
+
+    position: relative;
+    background: none;
+    border: none;
+    padding: 10px;
+    width: 400px;
+    margin-top: 3em;
+    outline: 0;
+    color: white;
+
+}
+
+.box-form input:hover{
+
+    cursor: pointer;
+
+}
+
+.box-form span{
+
+    position: absolute;
+    left: 0;
+    transform: translateY(-30px);
+    padding: 0px 10px 10px;
+    font-size: 1em;
+    pointer-events: none;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+form input:valid ~ span,
+form input:focus ~ span{
+
+    transition: .5s;
+    transform: translateY(-60px);
+    font-size: .75em;
+    color: #5740ce;
+
+}
+
+
+#ButtonSubmit{
+
+    border: 2px solid #16171b00;
+    border-radius: 10px;
+
+}
+
+#ButtonSubmit:hover{
+
+    transition: .5s;
+    border-color: #5740ce;
+
+}
+
+.box-img{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box-img img{
+
+    width: 70%;
+    height: 70%;
+
+}
+
+/*config para el footer*/
+
+.box-footer{
+
+    width: 100%;
+    height: 8%;
+    color: #5740ce;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.box-footer ion-icon{
+
+    margin-left: 20px;
+    color: #5740ce;
+
+}
+
+/*esto lo utilizamos para la animacion del fondo*/
+.bubles span:nth-child(even){
+
+    background: #5840ce3b;
+
+}
+
+.container{
+
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.bubles{
+
+    position: absolute;
+    display: flex;
+
+}
+
+.bubles span {
+
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #16171b;
+    opacity: .15;
+    margin: 0 4px;
+    border-radius: 50%;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+    z-index: 2;
+
+}
+
+/*animaciones*/
+
+@keyframes animate {
+
+    0%{
+
+        transform: translateY(100vh) scale(0);
+
+    }
+
+    100%{
+
+        transform: translateY(- 10vh) scale(1);
+
+    }
+
+}
+
+/*cueris*/
+
+@media (max-width:1200px) {
+
+    .box-body div{
+
+        width: 100%;
+        height: 100%;
+    
+    }
+
+    .box-img{
+
+        display: none;
+    
+    }
+
+    .box-form span{
+
+        position: absolute;
+        left: 0;
+        padding: 70px 10px 10px;
+        font-size: 1em;
+        pointer-events: none;
+        letter-spacing: 1px;
+        color: white;
+    
+    }
+
+    .box-header h1{
+
+        font-size: 20px;
+    
+    }
+    
+}
