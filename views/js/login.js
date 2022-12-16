@@ -15,10 +15,10 @@ if(mode == 'dark'){
 
 }
 
-let buttonReg                   = document.getElementById('buttonReg')
-buttonReg.style.color           = '#5740ce'
+let buttonLog                   = document.getElementById('buttonLog')
+buttonLog.style.color           = '#5740ce'
 
-let buttonLog                 = document.getElementById('buttonLog')
+let buttonReg                 = document.getElementById('buttonReg')
 
 function RegRedirect() {
   
@@ -53,7 +53,7 @@ function RegRedirect() {
 
     if (result.dismiss === Swal.DismissReason.timer) {
 
-      window.location.href = "/views/login.html"
+      window.location.href = "/views/registro.html"
       
     }
 
@@ -61,7 +61,7 @@ function RegRedirect() {
 
 }
 
-buttonLog.addEventListener('click', RegRedirect)
+buttonReg.addEventListener('click', RegRedirect)
 
 let RedirectIni                 = document.getElementById('buttonIni')
 

@@ -35,7 +35,7 @@ body{
     height: 100%;
     background: #ffffff;
     z-index: 1;
-    color: #16171b;
+    color: #ffffff;
 
 }
 
@@ -43,12 +43,11 @@ body{
 
     color: #16171b;
 
-
 }
 
 .box .box-form section{
 
-    color: #16171b;
+    color: #ffffff;
 
 }
 
@@ -407,4 +406,3 @@ form input:focus ~ span{
     }
     
 }
-

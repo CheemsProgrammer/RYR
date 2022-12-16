@@ -228,3 +228,95 @@ if(mode=='dark') {
   encendido.style.display       = 'block'
 
 }
+
+//redireccionamiento
+
+let RedirectReg                 = document.getElementById('RedirectReg')
+
+function RegRedirect() {
+  
+  let timerInterval
+
+  Swal.fire({
+
+    title: 'Auto close alert!',
+    html: 'I will close in <b></b> milliseconds.',
+    timer: 2000,
+    timerProgressBar: true,
+
+    didOpen: () => {
+
+      Swal.showLoading()
+      const b = Swal.getHtmlContainer().querySelector('b')
+      timerInterval = setInterval(() => {
+
+        b.textContent = Swal.getTimerLeft()
+
+      }, 100)
+
+    },
+
+    willClose: () => {
+
+      clearInterval(timerInterval)
+
+    }
+
+  }).then((result) => {
+
+    if (result.dismiss === Swal.DismissReason.timer) {
+
+      window.location.href = "/views/registro.html"
+      
+    }
+
+  })
+
+}
+
+RedirectReg.addEventListener('click', RegRedirect)
+
+let RedirectLog                 = document.getElementById('RedirectLog')
+
+function LogRedirect() {
+  
+  let timerInterval
+
+  Swal.fire({
+
+    title: 'Auto close alert!',
+    html: 'I will close in <b></b> milliseconds.',
+    timer: 2000,
+    timerProgressBar: true,
+
+    didOpen: () => {
+
+      Swal.showLoading()
+      const b = Swal.getHtmlContainer().querySelector('b')
+      timerInterval = setInterval(() => {
+
+        b.textContent = Swal.getTimerLeft()
+
+      }, 100)
+
+    },
+
+    willClose: () => {
+
+      clearInterval(timerInterval)
+
+    }
+
+  }).then((result) => {
+
+    if (result.dismiss === Swal.DismissReason.timer) {
+
+      window.location.href = "/views/login.html"
+      
+    }
+
+  })
+
+}
+
+RedirectLog.addEventListener('click', LogRedirect)
