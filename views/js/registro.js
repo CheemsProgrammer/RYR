@@ -26,8 +26,8 @@ function RegRedirect() {
 
   Swal.fire({
 
-    title: 'Auto close alert!',
-    html: 'I will close in <b></b> milliseconds.',
+    title: 'Direccionando',
+    html: 'Espera... <b></b> milliseconds.',
     timer: 2000,
     timerProgressBar: true,
 
@@ -71,8 +71,8 @@ function LogRedirect() {
 
   Swal.fire({
 
-    title: 'Auto close alert!',
-    html: 'I will close in <b></b> milliseconds.',
+    title: 'Direccionando',
+    html: 'Espera... <b></b> milliseconds.',
     timer: 2000,
     timerProgressBar: true,
 

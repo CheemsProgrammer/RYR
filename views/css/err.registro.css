@@ -1,0 +1,76 @@
+/*fuentes a usar*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+/*esto lo utilizamos para la animacion del fondo*/
+.bubles span:nth-child(even){
+
+    background: #5740ce;
+
+}
+
+.container{
+
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.bubles{
+
+    position: absolute;
+    display: flex;
+
+}
+
+.bubles span {
+
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #16171b;
+    opacity: .15;
+    margin: 0 4px;
+    border-radius: 50%;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+
+}
+
+@keyframes animate {
+
+    0%{
+
+        transform: translateY(100vh) scale(0);
+
+    }
+
+    100%{
+
+        transform: translateY(-10vh) scale(1);
+
+    }
+
+}

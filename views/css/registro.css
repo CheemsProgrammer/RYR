@@ -115,6 +115,7 @@ body{
 
     transition: .5s;
     color: #5740ce;
+    cursor: pointer;
 
 }
 
@@ -184,12 +185,12 @@ body{
 .box-form input{
 
     position: relative;
-    background: none;
+    background-color: transparent;
     border: none;
     border-bottom: 2px solid #ffffff00;
     padding: 10px;
     width: 300px;
-    margin-top: 3em;
+    margin-top: 2em;
     outline: 0;
     color: white;
 
@@ -204,6 +205,7 @@ body{
 .box-form span{
 
     position: absolute;
+    background: none;
     left: 0;
     transform: translateY(50px);
     padding: 0px 10px 10px;
@@ -224,8 +226,9 @@ form input:focus{
 form input:valid ~ span,
 form input:focus ~ span{
 
+    background: none;
     transition: .5s;
-    transform: translateY(30px);
+    transform: translateY(20px);
     font-size: .75em;
     color: #5740ce;
 

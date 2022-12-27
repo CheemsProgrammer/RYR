@@ -3,30 +3,35 @@ require('dotenv').config()
 
 //base de datos
 require('./controllers/connect')()
-const connection = conn()
+const con = conn()
 
-//constantes
+//constantes/dependecias
 const express = require('express')
 const app     = express()
 const url     = process.env.URL
 const parser  = require('body-parser')
 const ejs     = require('ejs')
 const path    = require('path')
-//const bcrypt  = require('bcrypt')
-//const fetch   = require('node-fetch')
-//const jwt     = require('jsonwebtoken')
+const bcrypt  = require('bcrypt')
+const fetch   = require('node-fetch')
+const jwt     = require('jsonwebtoken')
+const Swal    = require('sweetalert2')
 
+//middlewares exportados
+const { validateCreate } = require('../src/validation/usuario')
+const { validationUser } = require('./validation/validationUsers')
+
+//middlewares
 app.use(parser.urlencoded({extended: true}))
 app.set('views', path.join(__dirname, '../views'))
-app.engine('ejs', ejs.__express)
-app.set('view engine','ejs')
+app.engine('html', ejs.__express)
+app.set('view engine','html')
 app.use('/views', express.static(path.join(__dirname, "../views")));
-
 
 //ponemos a correr el servidor
 app.listen(process.env.PORT, () => {
   
-  connection.connect(() => {
+  con.connect(() => {
 
     console.log(`Servidor corriendo en ${url+process.env.PORT}`)
 
@@ -34,191 +39,105 @@ app.listen(process.env.PORT, () => {
 
 })
 
-//zonas para los renderizados de archivos ejs
+//zonas para los renderizados de vistas
+
+//login
+app.get(process.env.LOGIN_PATH, function(req,res) {
+
+  res.render("login")
+
+})
 
 //nuestro inicio
 app.get(process.env.ROOT_PATH, function(req,res) {
 
-  res.render("inicio")
-
-})
-
-//registro
-
-app.get(process.env.ROOT_REG, function(req, res){
-
-  res.render('registro')
-
-})
-
-/*app.post(process.env.ROOT_REG, function(req, res){
-
+  res.render('inicio')
   
-
+})
+  
+//registro
+app.get(process.env.ROOT_REG, function(req, res){
+  
+  res.render('registro')
+  
+})
+  
+/*app.post(process.env.ROOT_REG, function(req, res){
+  
+    
+  
 })*/
 
-/*app.get(process.env.LOGIN_PATH, function(req,res) {
-  res.render("login")
-})
+//ruta para el registro  
+app.post(process.env.HASHV_PATH, /*incorporamos la funcion como middleware*/ validateCreate,(req,res) => {
+  
+  const { nombre, correo, clave } = req.body
 
-app.get(process.env.HASHV_PATH, function(req,res) {
-  const { value } = req.params
-  bcrypt.hash(value, 10, function(err,hash) {
-    if(err) throw err
-    res.send(hash)
-  })
-})
+  bcrypt.hash(clave, 10, (err,hash) => {
 
-app.get(process.env.HASH_PATH, function(req,res) {
-  const { value } = req.params
-  bcrypt.compare(value, process.env.HASH, function (err,comp) {
-    if(err) throw err
-    res.send(comp)
-  })
-})
-
-app.post('/add/user', function(req,res) {
-  const { email, password } = req.body
-  bcrypt.hash(password, 10, function(err, hash) {
-    if(err) throw err
-    var sql = `INSERT INTO users (correo, password) VALUES ('${email}', '${hash}')`
-    connection.query(sql, function(err,data,fields) {
       if(err) throw err
-      res.send("user registered")
+      
+      sql = `INSERT INTO users(nombre, correo, clave) VALUES ('${nombre}', '${correo}', '${hash}');`
+      
+    con.query(sql, (err, data, fields) => {
+      
+      if(err) throw err
+      res.redirect('/views/login.html')
+          
+      
     })
+      
   })
+  
 })
 
-app.post('/user/login', async (req,res) => {
-  const { email, password } = req.body
-  var sql = `SELECT * FROM users WHERE correo = '${email}'`
+//ruta para el login
+app.post(process.env.VERIFY, async(req, res) => {
 
-  const user = await new Promise((resolve, reject) => {
-    connection.query(sql, function(err,data,fields) {
-      bcrypt.compare(password, data[0].password, function(err,comp) {
+  const {  email, clave } = req.body
+
+  const sql = `SELECT * FROM users WHERE correo = "${email}";`
+
+  const user = await new Promise((resolve,reject)=>{
+
+    con.query(sql,(err,data,fields)=>{
+
+      if(err) throw err
+
+      bcrypt.compare(clave,data[0].clave ,(err,comp)=>{
+
         if(err) reject(err)
         resolve(comp)
+
       })
+
     })
+
   })
 
-  if(user) {
+  if(user){
+
     const payload = {
-      correo: email,
-      clave: password,
-      acceso: "usuario"
+
+      email,
+      acceso: 'usuario'
+
     }
 
-    jwt.sign(payload,process.env.KEY, { algorithm: "HS256", expiresIn: 86400 }, (err,token) => {
-      if (err) throw err
+    jwt.sign(payload, process.env.KEY, { algorithm:"HS256" }, (err, token) => {
 
-      sql = `INSERT INTO login (correo,token) VALUES ('${email}', '${token}');`
+      if(err) throw err
 
-      connection.query(sql, (err) => {
+      const createToken = `INSERT INTO token(correo, token) VALUES ('${email}','${token}')`
+      con.query(createToken, (err, data, fields) => {
+
         if(err) throw err
-        res.send("Token registrado en la base de datos")
+        res.json(token)
+
       })
+
     })
-  }else{
-    res.send("Hay un problema")
-  }
-})
 
-// primera forma: Callbacks
-// función que recibe como argumento otra función y la ejecuta
-app.get('/asincronismo/callbacks', function (req,res) {
-  console.log('Primer mensaje')
-
-  setTimeout(() => {
-    console.log('Segundo mensaje')
-  }, 2000)
-
-  // () => {} = arrow functions ES6   this
-  // 1segundo = 1000ms
-
-  console.log('Tercer mensaje')
-
-  res.send('Hola mundo')
-})
-
-// segunda forma: Promesas
-// callbacks que esperan por la ejecución de otros callbacks
-app.get('/asincronismo/promesas', (req,res) => {
-  // setTimeout(() => {
-  //   console.log("primer callback")
-  //   setTimeout(() => {
-  //     console.log("segundo callback")
-  //     setTimeout(() => {
-  //       console.log("tercer callback")
-  //     }, 8000)
-  //   }, 5000)
-  // }, 3000)
-
-  // usaremos random user para ver el comportamiento de las promesas
-  // then y catch
-  const respuestaPromesa = fetch('https://randomuser.me/api')
-    .then((datos) => {
-      return datos.json()
-    })
-    .then((data) => {
-      res.json(data)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-})
-
-// tercera forma: async / await
-// Un promesa que espera por la respuesta de una o más ejecuciones
-app.get('/asincronismo/asywait', async (req,res) => {
-  const respuestaPromesa = await fetch('https://randomuser.me/api')
-  const promesaJSON      = await respuestaPromesa.json()
-  res.json(promesaJSON)
-})
-
-// Promesas que devuelven un resultado
-// Promise
-app.get('/buscar/usuario', async (req,res) => {
-  var sql = `SELECT correo FROM users WHERE correo = 'andi@root.com';`
-
-  var correo = await new Promise((resolve, reject) => {
-    connection.query(sql, (err,data,fields) => {
-      if(err) return reject(err)
-      return resolve(data)
-    })
-  })
-
-  res.render('login', { correo })
-})
-
-// Variables de entorno y jsonwebtoken
-// jsonwebtoken
-// payload    = Información a encriptar
-// privateKey = Llave para desencriptar la información
-// algoritmo  = El método de encriptación
-// función    = Devuelve dos valores: err y token
-app.get('/jwt/create/:user/:access', (req,res) => {
-  const { user, access } = req.params
-  const payload = {
-    usuario: user,
-    acceso: access
   }
 
-  jwt.sign(payload, process.env.KEY, { algorithm: "HS256", expiresIn: 86400 }, (err,token) => {
-    if(err) throw err
-    res.send(token)
-  })
 })
-
-app.get('/jwt/verify/:key/:token', (req,res) => {
-  const { key, token } = req.params
-
-  jwt.verify(token, key, (err,decoded) => {
-    if(err) throw err
-    if (decoded.acceso == "administrator") {
-      res.send('Bienvenido Administrador')
-    } else {
-      res.send('Hola Usuario')
-    }
-  })
-})*/

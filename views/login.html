@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/views/css/login.css">
 
     <!--titulo-->
-    <title>DeliciousPastries - registro</title>
+    <title>DeliciousPastries - Login</title>
 
 </head>
 <body id="body">
@@ -147,25 +147,18 @@
 
                         <h1>Iniciar <b>Sección</b></h1>
 
-                        <form action="">
+                        <form action="/login/verify" method="post">
 
                             <section>
 
-                                <input type="text" required="required">
-                                <span>Nombre</span>
-
-                            </section>
-
-                            <section>
-
-                                <input type="email" required="required">
+                                <input type="email" required="required" name="email">
                                 <span>Correo</span>
 
                             </section>
 
                             <section>
 
-                                <input type="password" required="required">
+                                <input type="password" required="required" name="clave">
                                 <span>Clave</span>
 
                             </section>

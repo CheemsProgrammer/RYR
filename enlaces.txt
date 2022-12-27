@@ -3,3 +3,5 @@ https://sweetalert2.github.io
 https://cssgradient.io
 https://undraw.co
 https://ionic.io/ionicons
+https://express-validator.github.io/docs/
+https://jwt.io
