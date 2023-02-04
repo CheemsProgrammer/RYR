@@ -45,7 +45,7 @@ Swal.fire({
         
             if (result.dismiss === Swal.DismissReason.timer) {
         
-              window.location.href = "/views/registro.html"
+              window.location.href = "/registro"
               
             }
         

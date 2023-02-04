@@ -10,7 +10,7 @@ const validateResult = (req, res, next) => {
     } catch (err) {
 
         res.status(403)
-        res.redirect('../views/err.registro.html')
+        res.redirect('/err')
 
     }
 

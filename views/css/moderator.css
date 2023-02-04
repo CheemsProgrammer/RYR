@@ -1,0 +1,203 @@
+/*fuentes a usar*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+
+    --darkGray: rgba(0, 0, 0, 0.22);
+    --dark: #262626;
+    --white: #fff;
+    --purple: #5740ce;
+    --red: #d62828;
+    --green: #2a9d8f;
+
+}
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body{
+
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark);
+
+}
+
+body::-webkit-scrollbar{
+
+    width: 7px;
+
+}
+
+body::-webkit-scrollbar-thumb{
+
+    background: var(--purple);
+    border-radius: 10px;
+
+}
+
+body div{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+}
+
+body nav{
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    background-color: var(--white);
+
+}
+
+body nav div{
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body span{
+
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    transform: translateY(50px);
+    padding: 0px 10px 10px;
+    font-size: 1em;
+    pointer-events: none;
+    letter-spacing: 1px;
+
+}
+
+body nav input{
+
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+    padding: 1em;
+    background: none;
+    border: none;
+    box-shadow: 5px 5px 10px var(--darkGray);
+    border-radius: 100px;
+    outline: none;
+
+}
+
+body form{
+
+    position: relative;
+
+}
+
+body table{
+
+    font-size: 14px;
+    width: 95%;
+    height: 100%;
+    padding: 1em;
+    margin-top: 50px;
+    background-color: var(--white);
+    box-shadow: 0px 0px 20px var(--dark);
+
+}
+
+body table thead{
+
+    text-align: center;
+
+}
+
+body table thead th{
+
+    padding-top: 30px;
+    color: var(--purple);
+    border-bottom: 1px solid var(--BlackTrasparent);
+
+}
+
+body .hash{
+
+    width: 100%;
+
+}
+
+body table td{
+
+    text-align: center;
+
+}
+
+body button {
+
+    width: 30%;
+    height: 50%;
+    border-radius: 5px;
+    background: none;
+    border-color: var(--white);
+
+}
+
+body button:hover {
+
+    border-color: var(--purple);
+    color: var(--purple);
+    transition: .5s;
+    cursor: pointer;
+
+}
+
+header{
+
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header ul li{
+
+    margin-left: 50px;
+    float: left;
+    list-style: none;
+
+}
+
+header h1{
+
+    font-size: 20px;
+    color: var(--white);
+    
+}
+
+header span{
+
+    color: var(--purple);
+    
+}

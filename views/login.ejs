@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--estilos-->
-    <link rel="stylesheet" href="/views/css/registro.css">
+    <link rel="stylesheet" href="/views/css/login.css">
 
     <!--titulo-->
-    <title>DeliciousPastries - registro</title>
+    <title>DeliciousPastries - Login</title>
 
 </head>
 <body id="body">
@@ -133,31 +133,32 @@
 
             <div class="box-body">
 
+                <div class="box-img">
+
+                    
+
+                    <img src="/views/image/Login_img.svg">
+
+                </div>
+
                 <div class="box-form">
 
                     <div>
 
-                        <h1>Regist<b>rarse</b></h1>
+                        <h1>Iniciar <b>Sección</b></h1>
 
-                        <form action="/Registro/hash" method="post">
-
-                            <section>
-
-                                <input type="text" required="required" name="nombre">
-                                <span>Nombre</span>
-
-                            </section>
+                        <form action="/login/verify" method="post">
 
                             <section>
 
-                                <input type="email" required="required" name="correo">
+                                <input type="email" required="required" name="email" autocomplete="off"> 
                                 <span>Correo</span>
 
                             </section>
 
                             <section>
 
-                                <input type="password" required="required" name="clave">
+                                <input type="password" required="required" name="clave" autocomplete="off">
                                 <span>Clave</span>
 
                             </section>
@@ -171,12 +172,6 @@
                         </form>
 
                     </div>
-
-                </div>
-
-                <div class="box-img">
-
-                    <img src="/views/image/data-personal.svg">
 
                 </div>
 
@@ -195,8 +190,8 @@
     
 </body>
 
-    <!--archivo js de el registro-->
-    <script src="/views/js/registro.js"></script>
+    <!--archivo js de el login-->
+    <script src="/views/js/login.js"></script>
 
     <!--sweetalert2-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

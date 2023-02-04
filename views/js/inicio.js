@@ -266,7 +266,7 @@ function RegRedirect() {
 
     if (result.dismiss === Swal.DismissReason.timer) {
 
-      window.location.href = "/views/registro.html"
+      window.location.href = "/registro"
       
     }
 
@@ -311,7 +311,7 @@ function LogRedirect() {
 
     if (result.dismiss === Swal.DismissReason.timer) {
 
-      window.location.href = "/views/login.html"
+      window.location.href = "/login"
       
     }
 

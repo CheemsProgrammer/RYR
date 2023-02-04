@@ -15,17 +15,15 @@ const path    = require('path')
 const bcrypt  = require('bcrypt')
 const fetch   = require('node-fetch')
 const jwt     = require('jsonwebtoken')
-const Swal    = require('sweetalert2')
 
 //middlewares exportados
 const { validateCreate } = require('../src/validation/usuario')
-const { validationUser } = require('./validation/validationUsers')
 
 //middlewares
 app.use(parser.urlencoded({extended: true}))
 app.set('views', path.join(__dirname, '../views'))
-app.engine('html', ejs.__express)
-app.set('view engine','html')
+app.engine('ejs', ejs.__express)
+app.set('view engine','ejs')
 app.use('/views', express.static(path.join(__dirname, "../views")));
 
 //ponemos a correr el servidor
@@ -41,32 +39,59 @@ app.listen(process.env.PORT, () => {
 
 //zonas para los renderizados de vistas
 
+//moderator
+app.get(process.env.OPERATOR, (req, res) => {
+
+  sql = `SELECT * FROM USERS`;
+  con.query(sql, (err, data, fields) => {
+
+    if(err) throw err
+    res.render('moderator', {data1:data})
+
+  })
+
+})
+
+app.get(process.env.ERRMSJ, (req, res) => {
+
+  res.render('err_registro')
+
+})
+
 //login
-app.get(process.env.LOGIN_PATH, function(req,res) {
+app.get(process.env.LOGIN_PATH, (req,res) => {
 
   res.render("login")
 
 })
 
 //nuestro inicio
-app.get(process.env.ROOT_PATH, function(req,res) {
+app.get(process.env.ROOT_PATH, (req,res) => {
 
   res.render('inicio')
   
 })
   
 //registro
-app.get(process.env.ROOT_REG, function(req, res){
+app.get(process.env.ROOT_REG, (req, res) => {
   
   res.render('registro')
   
 })
   
-/*app.post(process.env.ROOT_REG, function(req, res){
+//lugar general
+app.get(process.env.RYR, function(req, res){
   
-    
+    res.render('ryr')
   
-})*/
+})
+
+//crear
+app.get(process.env.CREATE, function(req, res){
+  
+  res.render('crear')
+
+})
 
 //ruta para el registro  
 app.post(process.env.HASHV_PATH, /*incorporamos la funcion como middleware*/ validateCreate,(req,res) => {
@@ -82,7 +107,7 @@ app.post(process.env.HASHV_PATH, /*incorporamos la funcion como middleware*/ val
     con.query(sql, (err, data, fields) => {
       
       if(err) throw err
-      res.redirect('/views/login.html')
+      res.redirect('/login')
           
       
     })
@@ -132,7 +157,7 @@ app.post(process.env.VERIFY, async(req, res) => {
       con.query(createToken, (err, data, fields) => {
 
         if(err) throw err
-        res.json(token)
+        res.redirect(process.env.RYR)
 
       })
 
